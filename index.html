@@ -165,7 +165,6 @@
 </div>
 <div class="ground"></div>
 
-<!-- ЭКРАН ПАРОЛЯ -->
 <section class="screen" id="gate">
   <div class="card" id="gateCard">
     <div class="emoji">🎄</div>
@@ -179,24 +178,18 @@
   </div>
 </section>
 
-<!-- САМА СТРАНИЦА -->
 <section class="screen hidden" id="page">
   <div class="main">
     <div class="emoji">✨❄️✨</div>
     <h2>С Новым годом!</h2>
-    <!-- ↓↓↓ СЮДА ВСТАВЬ СВОЙ ТЕКСТ ↓↓↓ -->
     <p>
-      Здесь будет твой текст. Пусть новый год принесёт тепло, радость и много
-      приятных моментов. Спасибо, что ты есть!
+      8 залуп
     </p>
-    <!-- ↑↑↑ КОНЕЦ ТЕКСТА ↑↑↑ -->
   </div>
 </section>
 
 <script>
-  // SHA-256 хэш пароля. По умолчанию пароль: snowflake2027
-  // Как поменять пароль — см. инструкцию в сообщении/README.
-  const PASSWORD_HASH = "4e3fde4b3ddebb4bf79881d1eb039af4dc479904def5427c6a29bb1650f22081";
+  const PASSWORD_HASH = "136b743f08d10a53cdb3ac5c80927d39b933035c51cc373c5aab852bb9cb49e7";
 
   async function sha256(text) {
     const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
@@ -270,7 +263,6 @@
   resize();
   draw();
 
-  /* ---------- Гирлянда ---------- */
   function buildGarland() {
     const box = document.getElementById("garland");
     box.innerHTML = "";
@@ -293,7 +285,6 @@
     const n = Math.floor(w / step);
     for (let i = 0; i <= n; i++) {
       const t = i / n;
-      // точка на двух квадратичных кривых (приблизительно синусоида)
       const x = t * w;
       const u = (t * 2) % 1 || (t === 1 ? 0 : 0);
       const y = 8 + 4 * sag * u * (1 - u);
